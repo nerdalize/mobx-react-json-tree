@@ -1,11 +1,12 @@
-import React, { PropTypes } from 'react';
-import objType from './objType';
-import JSONObjectNode from './JSONObjectNode';
-import JSONArrayNode from './JSONArrayNode';
-import JSONIterableNode from './JSONIterableNode';
-import JSONValueNode from './JSONValueNode';
+import React, { PropTypes } from 'react'
+import objType from './objType'
+import JSONObjectNode from './JSONObjectNode'
+import JSONArrayNode from './JSONArrayNode'
+import JSONIterableNode from './JSONIterableNode'
+import JSONValueNode from './JSONValueNode'
+import { observer } from 'mobx-react'
 
-const JSONNode = ({
+const JSONNode = observer(({
   getItemString,
   keyPath,
   labelRenderer,
@@ -15,7 +16,7 @@ const JSONNode = ({
   isCustomNode,
   ...rest
 }) => {
-  const nodeType = isCustomNode(value) ? 'Custom' : objType(value);
+  const nodeType = isCustomNode(value) ? 'Custom' : objType(value)
 
   const simpleNodeProps = {
     getItemString,
@@ -26,48 +27,48 @@ const JSONNode = ({
     styling,
     value,
     valueRenderer
-  };
+  }
 
   const nestedNodeProps = {
     ...rest,
     ...simpleNodeProps,
     data: value,
     isCustomNode
-  };
+  }
 
   switch (nodeType) {
     case 'Object':
     case 'Error':
     case 'WeakMap':
     case 'WeakSet':
-      return <JSONObjectNode {...nestedNodeProps} />;
+      return <JSONObjectNode {...nestedNodeProps} />
     case 'Array':
-      return <JSONArrayNode {...nestedNodeProps} />;
+      return <JSONArrayNode {...nestedNodeProps} />
     case 'Iterable':
     case 'Map':
     case 'Set':
-      return <JSONIterableNode {...nestedNodeProps} />;
+      return <JSONIterableNode {...nestedNodeProps} />
     case 'String':
-      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => `"${raw}"`} />;
+      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => `"${raw}"`} />
     case 'Number':
-      return <JSONValueNode {...simpleNodeProps} />;
+      return <JSONValueNode {...simpleNodeProps} />
     case 'Boolean':
-      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => (raw ? 'true' : 'false')} />;
+      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => (raw ? 'true' : 'false')} />
     case 'Date':
-      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => raw.toISOString()} />;
+      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => raw.toISOString()} />
     case 'Null':
-      return <JSONValueNode {...simpleNodeProps} valueGetter={() => 'null'} />;
+      return <JSONValueNode {...simpleNodeProps} valueGetter={() => 'null'} />
     case 'Undefined':
-      return <JSONValueNode {...simpleNodeProps} valueGetter={() => 'undefined'} />;
+      return <JSONValueNode {...simpleNodeProps} valueGetter={() => 'undefined'} />
     case 'Function':
     case 'Symbol':
-      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => raw.toString()} />;
+      return <JSONValueNode {...simpleNodeProps} valueGetter={raw => raw.toString()} />
     case 'Custom':
-      return <JSONValueNode {...simpleNodeProps} />;
+      return <JSONValueNode {...simpleNodeProps} />
     default:
-      return null;
+      return null
   }
-};
+})
 
 JSONNode.propTypes = {
   getItemString: PropTypes.func.isRequired,
@@ -77,7 +78,6 @@ JSONNode.propTypes = {
   value: PropTypes.any,
   valueRenderer: PropTypes.func.isRequired,
   isCustomNode: PropTypes.func.isRequired
-};
+}
 
-export default JSONNode;
-
+export default JSONNode

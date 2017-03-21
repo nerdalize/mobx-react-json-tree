@@ -3,6 +3,7 @@ import JSONArrow from './JSONArrow';
 import getCollectionEntries from './getCollectionEntries';
 import JSONNode from './JSONNode';
 import ItemRange from './ItemRange';
+import { observer } from 'mobx-react'
 
 /**
  * Renders nested values (eg. objects, arrays, lists, etc.)
@@ -67,6 +68,7 @@ function getStateFromProps(props) {
   };
 }
 
+@observer
 export default class JSONNestedNode extends React.Component {
   static propTypes = {
     getItemString: PropTypes.func.isRequired,
