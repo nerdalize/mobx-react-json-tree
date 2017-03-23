@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react'
-import { observer } from 'mobx-react'
+import React, { PropTypes } from 'react';
+import { observer } from 'mobx-react';
 
 const JSONArrow = observer(({
   styling,
@@ -19,7 +19,7 @@ const JSONArrow = observer(({
       }
     </div>
   </div>
-))
+));
 
 JSONArrow.propTypes = {
   styling: PropTypes.func.isRequired,
@@ -27,10 +27,10 @@ JSONArrow.propTypes = {
   expanded: PropTypes.bool.isRequired,
   nodeType: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
-}
+};
 
 JSONArrow.defaultProps = {
   arrowStyle: 'single'
-}
+};
 
-export default JSONArrow
+export default JSONArrow;

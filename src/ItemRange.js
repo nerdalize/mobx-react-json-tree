@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import JSONArrow from './JSONArrow';
-import { observer } from 'mobx-react'
+import { observer } from 'mobx-react';
 
 @observer
 export default class ItemRange extends React.Component {

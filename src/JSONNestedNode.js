@@ -3,7 +3,7 @@ import JSONArrow from './JSONArrow';
 import getCollectionEntries from './getCollectionEntries';
 import JSONNode from './JSONNode';
 import ItemRange from './ItemRange';
-import { observer } from 'mobx-react'
+import { observer } from 'mobx-react';
 
 /**
  * Renders nested values (eg. objects, arrays, lists, etc.)

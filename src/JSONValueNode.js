@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react'
-import { observer } from 'mobx-react'
+import React, { PropTypes } from 'react';
+import { observer } from 'mobx-react';
 
 /**
  * Renders simple values (eg. strings, numbers, booleans, etc)
@@ -24,7 +24,7 @@ const JSONValueNode = observer(({
       {valueRenderer(valueGetter(value), value, ...keyPath)}
     </span>
   </li>
-))
+));
 
 JSONValueNode.propTypes = {
   nodeType: PropTypes.string.isRequired,
@@ -36,10 +36,10 @@ JSONValueNode.propTypes = {
   valueRenderer: PropTypes.func.isRequired,
   value: PropTypes.any,
   valueGetter: PropTypes.func
-}
+};
 
 JSONValueNode.defaultProps = {
   valueGetter: value => value
-}
+};
 
-export default JSONValueNode
+export default JSONValueNode;
