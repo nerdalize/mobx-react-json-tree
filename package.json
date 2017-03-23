@@ -1,5 +1,5 @@
 {
-  "name": "react-json-tree",
+  "name": "mobx-react-json-tree",
   "version": "0.10.7",
   "description": "React JSON Viewer Component, Extracted from redux-devtools",
   "main": "lib/index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chibicode/react-json-tree.git"
+    "url": "https://github.com/nerdalize/mobx-react-json-tree.git"
   },
   "keywords": [
     "react",
@@ -25,7 +25,7 @@
   "contributors": [
     "Alexander Kuznetsov <alexkuz@gmail.com> (http://kuzya.org/)",
     "Dave Vedder <veddermatic@gmail.com> (http://www.eskimospy.com/)",
-    "Daniele Zannotti <dzannotti@me.com> (http://www.github.com/dzannotti)"
+    "Daniele Zannotti <dzannotti@me.com> (http://www.github.com/dzannotti)",
   ],
   "license": "MIT",
   "bugs": {
